@@ -28,7 +28,7 @@
     "autoload": {
         "exclude-from-classmap": [ "/tests/" ],
         "psr-4": {
-            "ID3Global\\": ""
+            "ID3Global\\": "src/"
         }
 
     }
