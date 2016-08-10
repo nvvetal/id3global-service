@@ -31,7 +31,17 @@ class GlobalAuthenticationGateway extends ID3GlobalBaseGateway {
         $request->setProfileIDVersion($profile);
 
         $request->addFieldsFromIdentity($identity);
+        $res = null;
+        try {
+          $res = $this->getClient()->AuthenticateSP($request);
+        }catch(\Exception $e){
+      
+        }
+//exit;
+//        var_dump($this->getClient()->__getLastRequestHeaders());
+//        var_dump($this->getClient()->__getLastRequest());
+//        var_dump($this->getClient()->__getLastResponse());
 
-        return $this->getClient()->AuthenticateSP($request);
+        return $res;
     }
 }

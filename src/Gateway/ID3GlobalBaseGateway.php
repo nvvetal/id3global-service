@@ -19,6 +19,7 @@ abstract class ID3GlobalBaseGateway {
         } else {
             $wsdl = $this->liveSiteWsdl;
         }
+//var_dump($username, $password, $soapClientOptions,  $usePilotSite, $wsdl );
 
         $defaultOptions = array(
             'soap_version' => SOAP_1_1,

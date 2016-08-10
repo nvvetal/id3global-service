@@ -56,7 +56,7 @@ class GlobalAuthenticationService extends ID3BaseService
         try {
             $response = $gateway->AuthenticateSP($this->profileID, $this->profileVersion, $this->customerReference,
                 $this->identity);
-
+//            var_dump($response);
             $validResult = false;
 
             if(isset($response) && isset($response->AuthenticateSPResult) && isset($response->AuthenticateSPResult->BandText)) {
@@ -73,7 +73,10 @@ class GlobalAuthenticationService extends ID3BaseService
 
             if($validResult) {
                 $this->lastVerifyIdentityResponse = $response;
-                return $response->AuthenticateSPResult->BandText;
+                return array(
+                    'status' => $response->AuthenticateSPResult->BandText,
+                    'score'  => $response->AuthenticateSPResult->Score,
+                );
             } else {
                 throw new IdentityVerificationFailureException($response);
             }

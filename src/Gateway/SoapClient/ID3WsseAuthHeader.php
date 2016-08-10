@@ -19,6 +19,7 @@ class ID3WsseAuthHeader extends \SoapHeader {
         $token = new \SoapVar($usernameToken, SOAP_ENC_OBJECT, null, $this->wsseNamespace, 'UsernameToken', $this->wsseNamespace);
 
         $security = new \SoapVar($token, SOAP_ENC_OBJECT, null, $this->wsseNamespace, 'Security', $this->wsseNamespace);
+//        var_dump($username, $password, $usernameToken->UsernameToken);
 
         parent::__construct($this->wsseNamespace, 'Security', $security, true);
     }
