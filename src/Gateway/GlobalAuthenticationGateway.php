@@ -38,10 +38,11 @@ class GlobalAuthenticationGateway extends ID3GlobalBaseGateway {
       
         }
 //exit;
-//        var_dump($this->getClient()->__getLastRequestHeaders());
-//        var_dump($this->getClient()->__getLastRequest());
-//        var_dump($this->getClient()->__getLastResponse());
-
+/*
+        var_dump($this->getClient()->__getLastRequestHeaders());
+        var_dump($this->getClient()->__getLastRequest());
+        var_dump($this->getClient()->__getLastResponse());
+*/
         return $res;
     }
 }

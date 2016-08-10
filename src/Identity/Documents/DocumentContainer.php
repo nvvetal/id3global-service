@@ -19,7 +19,8 @@ class DocumentContainer extends ID3IdentityObject
      * @var array Used by self::addIdentityDocument() to ensure the country name is valid
      */
     private $validCountries = array(
-        'NewZealand'
+        'NewZealand',
+        'UK'
     );
 
     /**
@@ -47,6 +48,15 @@ class DocumentContainer extends ID3IdentityObject
     {
         return $this->NewZealand;
     }
+
+    /**
+     * @return array
+     */
+    public function getUKDocuments()
+    {
+        return $this->UK;
+    }
+
 
     /**
      * @param ID3IdentityObject $document
